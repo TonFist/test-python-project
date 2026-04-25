@@ -1,7 +1,10 @@
 import argparse
-import http.server
 import socketserver
 import sys
+from pathlib import Path
+
+from app.router import make_handler
+from app.routes import router
 
 
 def run_cli() -> int:
@@ -10,7 +13,9 @@ def run_cli() -> int:
 
 
 def run_dev_server(port: int) -> int:
-    handler = http.server.SimpleHTTPRequestHandler
+    static_dir = Path(__file__).parent / "static"
+    router.enable_static(static_dir, url_prefix="/static")
+    handler = make_handler(router)
     with socketserver.TCPServer(("", port), handler) as httpd:
         print(f"Serving on http://localhost:{port}")
         try:
