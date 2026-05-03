@@ -1,0 +1,2 @@
+Simulated cache data for .mypy_cache.
+This file exists only to mimic a heavy generated folder.

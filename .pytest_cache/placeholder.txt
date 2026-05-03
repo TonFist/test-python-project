@@ -1,0 +1,2 @@
+Simulated cache data for .pytest_cache.
+This file exists only to mimic a heavy generated folder.

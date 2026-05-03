@@ -1,4 +1,5 @@
 from http import HTTPStatus
+from pathlib import Path
 
 from app.router import Response, Router
 
@@ -6,11 +7,13 @@ from app.router import Response, Router
 router = Router()
 api_router = Router()
 router.mount("/api", api_router)
+static_root = Path(__file__).resolve().parent.parent / "static"
 
 
 @router.get("/")
 def index(_request):
-    return Response.text("Hello from router")
+    index_file = static_root / "index.html"
+    return Response.bytes(index_file.read_bytes(), content_type="text/html; charset=utf-8")
 
 
 @router.get("/health")

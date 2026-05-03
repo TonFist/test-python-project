@@ -1,12 +1,71 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Static Index</title>
+    <title>Python Starter</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <script defer src="/static/app.js"></script>
   </head>
   <body>
-    <h1>Static file served</h1>
-    <p>Edit static/index.html to customize this page.</p>
+    <main class="page">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark"></div>
+          <div>
+            <h1>Python Starter</h1>
+            <p>No framework, no fuss</p>
+          </div>
+        </div>
+        <a class="pill" href="/api/health">API Health</a>
+      </header>
+
+      <section class="hero">
+        <div class="card hero-main">
+          <span class="kicker">Landing page cơ bản</span>
+          <h2>Xây app/web nhanh bằng Python thuần</h2>
+          <p>
+            Đây là template khởi đầu có routing riêng cho API, static files, và một giao diện
+            landing gọn gàng để bạn mở rộng về sau mà không cần framework.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="/api/health">Xem API</a>
+            <a class="button secondary" href="/static/index.html">Reload UI</a>
+          </div>
+        </div>
+
+        <aside class="card hero-side">
+          <div class="stat">
+            <strong data-count="3">3</strong>
+            <span>route mẫu sẵn có</span>
+          </div>
+          <div class="stat">
+            <strong data-count="1">1</strong>
+            <span>landing page cơ bản</span>
+          </div>
+          <div class="stat">
+            <strong data-count="3">3</strong>
+            <span>thư mục cache giả lập</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section">
+        <article class="card feature">
+          <h3>API routing</h3>
+          <p>Giữ đường dẫn riêng cho backend logic, dễ tách `/api` khỏi phần giao diện.</p>
+        </article>
+        <article class="card feature">
+          <h3>Static assets</h3>
+          <p>CSS và JS được phục vụ trực tiếp từ `/static`, hợp cho mở rộng nhanh.</p>
+        </article>
+        <article class="card feature">
+          <h3>Tối giản</h3>
+          <p>Không phụ thuộc framework, nên dễ hiểu và dễ thay đổi theo nhu cầu.</p>
+        </article>
+      </section>
+
+      <footer class="footer">Chạy bằng python main.py --serve và mở localhost:8000</footer>
+    </main>
   </body>
 </html>

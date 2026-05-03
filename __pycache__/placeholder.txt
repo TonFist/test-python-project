@@ -1,0 +1,2 @@
+Simulated cache data for __pycache__.
+This file exists only to mimic a heavy generated folder.
